@@ -317,8 +317,8 @@ function init() {
   <?php
   header('Access-Control-Allow-Origin: *');
   ?>
-  <?php echo "var lat = $_POST['lat'];"?>
-  <?php echo "var lng = $_POST['lng'];"?>
+  var lat = <?php echo $_POST['lat']?>;
+  var lng = <?php echo $_POST['lng']?>;
   marker.setPosition({ lat, lng });
   map.panTo({ lat, lng });
   $info.textContent = `Lat: ${lat.toFixed(5)} Lng: ${lng.toFixed(5)}`;
