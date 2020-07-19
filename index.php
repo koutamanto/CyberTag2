@@ -334,7 +334,7 @@ file_put_contents("loc.json" , $return_array);
   if(file_exists($jsonUrl)){
     $json = file_get_contents($jsonUrl);
     $json = $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
-    $obj = json_decode($json,true)
+    $obj = json_decode($json,true);
     $lat = $obj["lat"];
     echo $lat;
   }  
@@ -343,7 +343,7 @@ file_put_contents("loc.json" , $return_array);
   if(file_exists($jsonUrl)){
     $json = file_get_contents($jsonUrl);
     $json = $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
-    $obj = json_decode($json,true)
+    $obj = json_decode($json,true);
     $lng = $obj["lng"];
     echo $lng;
   }?>;
