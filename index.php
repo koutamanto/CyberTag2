@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 $lat = $_POST['lat'];
 $lng = $_POST['lng'];
 ?>
