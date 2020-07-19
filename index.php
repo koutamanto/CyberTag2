@@ -1,4 +1,7 @@
-
+<?php 
+header("Content-type:application/json; charset=utf8");
+header("Access-Control-Allow-Origin: *");
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -324,8 +327,6 @@ $lat = $_POST['lat'];
 $return_array = array($lat, $lat);
  
 //ヘッダーの設定
-header("Content-type:application/json; charset=utf8");
-header("Access-Control-Allow-Origin: *");
  
 //「$return_array」をjson_encodeして出力
 file_put_contents("loc.json" , $return_array);
