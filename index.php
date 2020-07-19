@@ -321,7 +321,7 @@ function init() {
   <?php
   //ajax送信でPOSTされたデータを受け取る
   $lat = $_POST['lat'];
-  $lat = $_POST['lat'];
+  $lng = $_POST['lng'];
   
   echo "var lat = $lat";
   echo "var lng = $lng";
