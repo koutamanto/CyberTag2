@@ -15,6 +15,10 @@
             <p id="info" class="info"></p>
           </main>
           <script>
+            io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+});
               /**
  * Create google maps Map instance.
  * @param {number} lat
@@ -309,6 +313,7 @@ const getPositionErrorMessage = code => {
  * Initialize the application.
  * Automatically called by the google maps API once it's loaded.
 */
+
 var connection = new WebSocket('wss://cybertag.herokuapp.com/index.html');
 connection.onmessage = function(e) {
     console.log(e.data);
