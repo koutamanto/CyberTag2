@@ -1,3 +1,6 @@
+<?php
+  header('Access-Control-Allow-Origin: *');
+  ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -314,9 +317,6 @@ function init() {
   const map = createMap(initialPosition);
   const marker = createMarker({ map, position: initialPosition });
   const $info = document.getElementById('info');
-  <?php
-  header('Access-Control-Allow-Origin: *');
-  ?>
   var lat = <?php echo $_POST['lat']?>;
   var lng = <?php echo $_POST['lng']?>;
   marker.setPosition({ lat, lng });
