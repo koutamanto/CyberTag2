@@ -323,8 +323,8 @@ function init() {
   $lat = $_POST['lat'];
   $lat = $_POST['lat'];
   
-  echo "var lat = $lat"
-  echo "var lng = $lng"
+  echo "var lat = $lat";
+  echo "var lng = $lng";
 ?>
   marker.setPosition({ lat, lng });
   map.panTo({ lat, lng });
