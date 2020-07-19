@@ -309,10 +309,10 @@ const getPositionErrorMessage = code => {
  * Initialize the application.
  * Automatically called by the google maps API once it's loaded.
 */
-function init() {
-  connection.onmessage = function(e) {
+connection.onmessage = function(e) {
     console.log(e.data);
   };
+function init() {
   const initialPosition = { lat: 59.32, lng: 17.84 };
   const map = createMap(initialPosition);
   const marker = createMarker({ map, position: initialPosition });
