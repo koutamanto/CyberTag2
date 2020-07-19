@@ -1,18 +1,5 @@
-var port = 8080;
-const httpServer = require('http'),
-app = require('express')(),
-socketServer = http.Server(app),
-io = require('socket.io')(httpServer);
-httpServer.createServer(function (req, res) {
-console.log('http server created on 8080');
-}).listen(port);
-socketServer.listen(port, function(){
-console.log('listening on 8080');
-});
-const port = 8080;
-let app = require('express')();
-let server = app.listen(port);
-let io = require('socket.io')(server);
+import io from 'socket.io-client';
+io = require('socket.io')
 io.configure(function () { 
   io.set("transports", ["xhr-polling"]); 
   io.set("polling duration", 10); 
