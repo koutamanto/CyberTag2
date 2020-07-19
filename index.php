@@ -317,8 +317,8 @@ function init() {
   const map = createMap(initialPosition);
   const marker = createMarker({ map, position: initialPosition });
   const $info = document.getElementById('info');
-  var lat = <?php echo $_POST['lat']?>;
-  var lng = <?php echo $_POST['lng']?>;
+  var lat = <?= $_POST['lat']?>;
+  var lng = <?= $_POST['lng']?>;
   marker.setPosition({ lat, lng });
   map.panTo({ lat, lng });
   $info.textContent = `Lat: ${lat.toFixed(5)} Lng: ${lng.toFixed(5)}`;
