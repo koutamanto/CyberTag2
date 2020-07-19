@@ -320,8 +320,9 @@ function init() {
   const $info = document.getElementById('info');
   <?php
   //ajax送信でPOSTされたデータを受け取る
-  $lat = $_POST['lat'];
-  $lng = $_POST['lng'];
+  echo "console.log($_POST)";
+  $lat = $_POST["lat"];
+  $lng = $_POST["lng"];
   
   echo "var lat = $lat";
   echo "var lng = $lng";
