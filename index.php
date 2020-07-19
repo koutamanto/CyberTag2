@@ -336,11 +336,9 @@ function init() {
           </script>
           <script src="script.js"></script>
           <?php
-          while(true) {
-            if($_POST){
+          while($_POST) {
               echo "console.log('$_POST')";
-              echo '<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnvfCzfTUocTomdfaS9h6xDYBI76RMdbI&callback=init"></script>';  
-            }
+              echo '<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnvfCzfTUocTomdfaS9h6xDYBI76RMdbI&callback=init"></script>';
           }
                    
           ?>
