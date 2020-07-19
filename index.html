@@ -312,7 +312,22 @@ const getPositionErrorMessage = code => {
 var connection = new WebSocket('wss://cybertag.herokuapp.com/index.html');
 connection.onmessage = function(e) {
     console.log(e.data);
+    function init() {
+      var lat = e.data["lat"]
+      var lng = e.data["lng"]
+      const initialPosition = { lat: lat, lng: lng };
+      const map = createMap(initialPosition);
+      const marker = createMarker({ map, position: initialPosition });
+      const $info = document.getElementById('info');
+      marker.setPosition({ lat, lng });
+      map.panTo({ lat, lng });
+      $info.textContent = `Lat: ${lat.toFixed(5)} Lng: ${lng.toFixed(5)}`;
+      $info.classList.remove('error');
+}
   };
+connection.onclose = function(event) {
+  var connection = new WebSocket('wss://cybertag.herokuapp.com/index.html');
+}
 function init() {
   const initialPosition = { lat: 59.32, lng: 17.84 };
   const map = createMap(initialPosition);
