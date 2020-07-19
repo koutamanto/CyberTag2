@@ -1,8 +1,6 @@
 <?php
-    //例として必ずidにはint型しか入らないという前提の弱い無害化
-    $lat = $_POST["lat"];
-    $lng = $_POST["lng"];
-
+$lat = $_POST['lat'];
+$lng = $_POST['lng'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
