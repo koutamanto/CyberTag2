@@ -336,7 +336,9 @@ function init() {
           </script>
           <script src="script.js"></script>
           <?php
-            echo "console.log('$_POST["lat"]')";
+            printf($_POST);
+            printf($_POST["lat"]);
+            printf($_POST["lng"])
             echo '<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnvfCzfTUocTomdfaS9h6xDYBI76RMdbI&callback=init"></script>';
           }
                    
