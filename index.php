@@ -1,6 +1,4 @@
-<?php
-  header('Access-Control-Allow-Origin: *');
-  ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -317,8 +315,38 @@ function init() {
   const map = createMap(initialPosition);
   const marker = createMarker({ map, position: initialPosition });
   const $info = document.getElementById('info');
-  var lat = <?= $_POST['lat']?>;
-  var lng = <?= $_POST['lng']?>;
+  <?php
+//ajax送信でPOSTされたデータを受け取る
+$lat = $_POST['lat'];
+$lat = $_POST['lat'];
+ 
+//受け取ったデータを配列に格納
+$return_array = array($lat, $lat);
+ 
+//ヘッダーの設定
+header("Content-type:application/json; charset=utf8");
+header("Access-Control-Allow-Origin: *");
+ 
+//「$return_array」をjson_encodeして出力
+file_put_contents("loc.json" , $return_array);
+?>
+  var lat = <?php $jsonUrl = "loc.json";
+  if(file_exists($jsonUrl)){
+    $json = file_get_contents($jsonUrl);
+    $json = $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+    $obj = json_decode($json,true)
+    $lat = $obj["lat"];
+    echo $lat;
+  }  
+  ?>;
+  var lng = <?php $jsonUrl = "loc.json";
+  if(file_exists($jsonUrl)){
+    $json = file_get_contents($jsonUrl);
+    $json = $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+    $obj = json_decode($json,true)
+    $lng = $obj["lng"];
+    echo $lng;
+  }?>;
   marker.setPosition({ lat, lng });
   map.panTo({ lat, lng });
   $info.textContent = `Lat: ${lat.toFixed(5)} Lng: ${lng.toFixed(5)}`;
