@@ -1,20 +1,24 @@
+// Expressを読み込む
 var express = require('express');
-var router = express.Router();
-
-/* 以下追加 */
 var app = express();
+
+// サーバーを構築
 var http = require('http').Server(app);
-var io = require('socket.io')(http);
-/* 以上追加 */
+app.use(express.static(__dirname + '/'));
+// Socket.ioを読み込み、サーバーと紐付け
+const io = require('socket.io').listen(http);
 
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
 });
-
-/* 以下追加 */
-io.on('connection', function(socket) {
-  console.log('connected!!!');
+/**
+ * Create google maps Map instance.
+ * @param {number} lat
+ * @param {number} lng
+ * @return {Object}
+ */
+ var port = process.env.PORT || 3000;
+http.listen(port, function() {
+  console.log('Server Running.');
 });
-/* 以上追加 */
-
-module.exports = router;
