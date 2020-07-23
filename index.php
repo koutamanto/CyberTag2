@@ -2,7 +2,15 @@
     $post_json_data = json_encode($_POST);
 ?><html>
   <head>
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>KJUNKIE - Zero</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
   <body>
   <body id="page-top">
