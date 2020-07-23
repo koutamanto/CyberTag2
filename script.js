@@ -287,7 +287,14 @@ const getPositionErrorMessage = code => {
  * Automatically called by the google maps API once it's loaded.
 */
 function init() {
-  const initialPosition = { lat: 59.32, lng: 17.84 };
+$.get("https://cybertagapi.herokuapp.com:5000/getLocation",
+  function(dt){
+    console.log(dt);
+    var lat = dt["lat"];
+    var lng = dt["lng"];
+  }
+);
+  const initialPosition = { lat: lat, lng: lng };
   const map = createMap(initialPosition);
   const marker = createMarker({ map, position: initialPosition });
   const $info = document.getElementById('info');
@@ -295,4 +302,4 @@ function init() {
   map.panTo({ lat, lng });
   $info.textContent = `Lat: ${lat.toFixed(5)} Lng: ${lng.toFixed(5)}`;
   $info.classList.remove('error');
-}
+};
