@@ -295,7 +295,7 @@ const getPositionErrorMessage = code => {
  * Automatically called by the google maps API once it's loaded.
 */
 function init() {
-$.get("cybertagapi.herokuapp.com/getLocation",
+$.get("https://cybertagapi.herokuapp.com/getLocation",
   function(dt){
     console.log(dt);
     var lat = dt["lat"];
