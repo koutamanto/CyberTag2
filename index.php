@@ -2,7 +2,7 @@
     $post_json_data = json_encode($_POST);
 ?><html>
   <head>
-      <script src="<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
   <body>
     <script type="text/javascript">
