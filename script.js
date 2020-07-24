@@ -306,7 +306,7 @@ var countup = function(){
     $info.textContent = `Lat: ${lat.toFixed(5)} Lng: ${lng.toFixed(5)}`;
     $info.classList.remove('error');
   }
-  xhr.send(null)
+  xhr.send(null);
 }
 /**
  * Initialize the application.
