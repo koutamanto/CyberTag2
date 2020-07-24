@@ -284,10 +284,10 @@ const getPositionErrorMessage = code => {
 
 var countup = function(){
   var xhr = new XMLHttpRequest();
+  xhr.responseType = 'json';
   xhr.open('GET','https://cybertagapi.herokuapp.com:27349/getLocation');
-  data = this.responseText;
+  data = this.response;
   console.log(data);
-  console.log(JSON.parse(data))
   var lats = data.lat;
   console.log(lats)
   var lat = parseFloat(lats);
