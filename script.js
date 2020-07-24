@@ -282,18 +282,12 @@ const getPositionErrorMessage = code => {
   }
 }
 
-/**
- * Initialize the application.
- * Automatically called by the google maps API once it's loaded.
-*/
-function init() {
-$.get("https://cybertagapi.herokuapp.com:5000/getLocation",
-  function(dt){
-    console.log(dt);
-    var lat = dt["lat"];
-    var lng = dt["lng"];
-  }
-);
+var countup = function(){
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET','https://cybertagapi.herokuapp.com/getLocation')
+  var data = xhr.responseText
+  var lat = data["lat"]
+  var lng = data["lng"]
   const initialPosition = { lat: lat, lng: lng };
   const map = createMap(initialPosition);
   const marker = createMarker({ map, position: initialPosition });
@@ -302,4 +296,12 @@ $.get("https://cybertagapi.herokuapp.com:5000/getLocation",
   map.panTo({ lat, lng });
   $info.textContent = `Lat: ${lat.toFixed(5)} Lng: ${lng.toFixed(5)}`;
   $info.classList.remove('error');
+}
+/**
+ * Initialize the application.
+ * Automatically called by the google maps API once it's loaded.
+*/
+function init() {
+  setInterval(countup, 3000);
+
 };
