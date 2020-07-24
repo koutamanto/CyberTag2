@@ -285,8 +285,8 @@ const getPositionErrorMessage = code => {
 var countup = function(){
   var xhr = new XMLHttpRequest();
   xhr.open('GET','https://cybertagapi.herokuapp.com:47135/getLocation');
-  xhr.send(null)
-  xhr.responseType = 'json';
+  xhr.onload = function() {
+    xhr.responseType = 'json';
   data = xhr.response;
   console.log(data);
   var lats = data.lat;
@@ -305,6 +305,8 @@ var countup = function(){
   map.panTo({ lat, lng });
   $info.textContent = `Lat: ${lat.toFixed(5)} Lng: ${lng.toFixed(5)}`;
   $info.classList.remove('error');
+  }
+  xhr.send(null)
 }
 /**
  * Initialize the application.
@@ -312,5 +314,4 @@ var countup = function(){
 */
 function init() {
   setInterval(countup, 3000);
-
 };
