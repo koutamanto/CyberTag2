@@ -284,10 +284,12 @@ const getPositionErrorMessage = code => {
 
 var countup = function(){
   var xhr = new XMLHttpRequest();
-  xhr.open('GET','https://cybertagapi.herokuapp.com/getLocation')
-  var data = xhr.responseText
-  var lat = data["lat"]
-  var lng = data["lng"]
+  xhr.open('GET','https://cybertagapi.herokuapp.com/getLocation');
+  var data = xhr.responseText;
+  var lat = data["lat"];
+  lat = parseFloat(lat);
+  var lng = data["lng"];
+  lng = parseFloat(lng);
   const initialPosition = { lat: lat, lng: lng };
   const map = createMap(initialPosition);
   const marker = createMarker({ map, position: initialPosition });
