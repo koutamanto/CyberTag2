@@ -284,7 +284,7 @@ const getPositionErrorMessage = code => {
 
 var countup = function(){
   var xhr = new XMLHttpRequest();
-  xhr.open('GET','https://cybertagapi.herokuapp.com:5806/getLocation');
+  xhr.open('GET','http://cybertagapi.herokuapp.com:5000/getLocation');
   xhr.send(null);
   data = JSON.parse(xhr.responseText);
   console.log(data);
