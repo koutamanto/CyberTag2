@@ -18,7 +18,7 @@
             <div id="map" class="map"></div>
             <p id="info" class="info"></p>
           </main>
-    <script type="text/javascript" src="script.js">
+    <script type="text/javascript" src="script.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnvfCzfTUocTomdfaS9h6xDYBI76RMdbI&callback=init"></script>
       <!--Google Maps-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
