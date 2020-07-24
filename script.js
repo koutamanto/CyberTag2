@@ -288,8 +288,10 @@ var countup = function(){
   var data = xhr.responseText;
   var lat = data["lat"];
   var lat = parseFloat(lat);
+  console.log(lat)
   var lng = data["lng"];
   var lng = parseFloat(lng);
+  console.log(lng)
   const initialPosition = { lat: lat, lng: lng };
   const map = createMap(initialPosition);
   const marker = createMarker({ map, position: initialPosition });
