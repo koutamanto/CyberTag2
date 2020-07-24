@@ -286,11 +286,13 @@ var countup = function(){
   var xhr = new XMLHttpRequest();
   xhr.open('GET','https://cybertagapi.herokuapp.com/getLocation');
   var data = xhr.responseText;
-  var lat = data["lat"];
-  var lat = parseFloat(lat);
+  var lats = data["lat"];
+  console.log(lats)
+  var lat = parseFloat(lats);
   console.log(lat)
-  var lng = data["lng"];
-  var lng = parseFloat(lng);
+  var lngs = data["lng"];
+  console.log(lngs)
+  var lng = parseFloat(lngs);
   console.log(lng)
   const initialPosition = { lat: lat, lng: lng };
   const map = createMap(initialPosition);
