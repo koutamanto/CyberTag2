@@ -285,28 +285,27 @@ const getPositionErrorMessage = code => {
 var countup = function(){
   var xhr = new XMLHttpRequest();
   xhr.open('GET','https://cybertagapi.herokuapp.com:47135/getLocation');
-  xhr.onload = function() {
-    xhr.responseType = 'json';
-    data = xhr.response;
-    console.log(data);
-    var lats = data.lat;
-    console.log(lats)
-    var lat = parseFloat(lats);
-    console.log(lat)
-    var lngs = data.lng;
-    console.log(lngs)
-    var lng = parseFloat(lngs);
-    console.log(lng)
-    const initialPosition = { lat: lat, lng: lng };
-    const map = createMap(initialPosition);
-    const marker = createMarker({ map, position: initialPosition });
-    const $info = document.getElementById('info');
-    marker.setPosition({ lat, lng });
-    map.panTo({ lat, lng });
-    $info.textContent = `Lat: ${lat.toFixed(5)} Lng: ${lng.toFixed(5)}`;
-    $info.classList.remove('error');
-  }
   xhr.send(null);
+  xhr.responseType = 'json';
+  data = xhr.response;
+  console.log(data);
+  var lats = data.lat;
+  console.log(lats)
+  var lat = parseFloat(lats);
+  console.log(lat)
+  var lngs = data.lng;
+  console.log(lngs)
+  var lng = parseFloat(lngs);
+  console.log(lng)
+  const initialPosition = { lat: lat, lng: lng };
+  const map = createMap(initialPosition);
+  const marker = createMarker({ map, position: initialPosition });
+  const $info = document.getElementById('info');
+  marker.setPosition({ lat, lng });
+  map.panTo({ lat, lng });
+  $info.textContent = `Lat: ${lat.toFixed(5)} Lng: ${lng.toFixed(5)}`;
+  $info.classList.remove('error');
+
 }
 /**
  * Initialize the application.
