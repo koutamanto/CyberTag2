@@ -286,7 +286,7 @@ var countup = function(){
   var xhr = new XMLHttpRequest();
   xhr.open('GET','https://cybertagapi.herokuapp.com:5000/getLocation');
   xhr.send();
-  data = JSON.parse(xhr.responseText);
+  data = xhr.responseText;
   console.log(data);
   var lats = data.lat;
   console.log(lats)
